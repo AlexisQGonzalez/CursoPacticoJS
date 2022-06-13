@@ -85,6 +85,7 @@ function calcularAreaCuadrado(){
     alert(area);
 }
 
+
 function calcularPerimetroTriangulo(){
     const input1 = document.getElementById("inputLado1Triangulo");
     const lado1 = parseInt(input1.value);
@@ -116,4 +117,18 @@ function calcularPerimetroCirculo() {
        const value = parseFloat(input.value);
        const area = areaCirculo(value);
        alert(area);
+   }
+
+   function calcularAltura(){
+    const input1 = document.getElementById("inputLado1Triangulo");
+    const lado1 = parseInt(input1.value);
+    const input2 = document.getElementById("inputLado2Triangulo");
+    const lado2 = parseInt(input2.value);
+    const input3 = document.getElementById("inputBaseTriangulo");
+    const base = parseInt(input3.value);
+    if( lado1 === lado2 && base !== lado1){
+        const altura = 
+            Math.sqrt((lado1 * lado1) - (( base * base ) / 4));
+        alert(altura);
+    }
    }
