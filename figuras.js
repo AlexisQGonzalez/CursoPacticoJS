@@ -128,7 +128,7 @@ function calcularPerimetroCirculo() {
     const base = parseInt(input3.value);
     if( lado1 === lado2 && base !== lado1){
         const altura = 
-            Math.sqrt((lado1 * lado1) - (( base * base ) / 4));
+            Math.sqrt(lado1 **2 - ( base ** 2  / 4));
         alert(altura);
     }
    }
