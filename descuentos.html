@@ -97,7 +97,7 @@
             align-self: center;
             margin: 10%;
         }
-        .cupones{
+        .envio{
             border-radius: 8px;
             border-style: none;
             font-family:'Quicksand', sans-serif ;
@@ -105,6 +105,9 @@
         .container{
             display: flex;
             flex-flow: column ;
+        }
+        .container label {
+            padding-left: 4px;
         }
         form input{
             width: 30%;
@@ -121,6 +124,10 @@
             border-style: none;
             background-color: var(--complementary-color-1);
             color: var(--white);
+        }
+        .Paste-Here{
+            display: flex;
+            flex-flow: column-reverse;
         }
         footer{
             margin: 0;
@@ -153,23 +160,29 @@
             <div class="container">
                 <label class="description" for="inputPrice"> Escribe el precio de tu producto:</label>
                 <input type="number" id="inputPrice" >
+
+                <label class="description" for="inputPrice"> ingrese cupon</label>
+                <input type="text" id="inputCupon" >
             </div>
             
             <div class="container">
                 <label class="description" for="inputDiscount" >Seleccionar uno de los cupones de descuento por tipo de envio:</label>
-            <select name="cupones" id="envio" class="cupones">
-                <option class="option" value="15">Envio EXPRESS</option>
-                <option class="option" value="20">Envio normal</option>
-                <option class="option" value="25"> Retiro en local</option>
+            <select name="Envios" id="InputEnvio" class="envio">
+                <option class="option" value="25">Envio EXPRESS</option>
+                <option class="option" value="15">Envio normal</option>
+                <option class="option" value="0"> Retiro en local</option>
             </select>
             </div>
             <div class="container">
                 <button type="button" class="primary-button" onclick="PriceDiscount()" on> Calcular el precio con descuento</button>
 
             </div>
+            <div class="Paste-Here">
             <p id="ResultP"></p>
             <p id="ResultP2"></p> 
             <p id="ResultP3"></p> 
+            </div>
+         
 
         </form>
     </section>
