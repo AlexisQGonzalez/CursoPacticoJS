@@ -17,35 +17,162 @@
         html{
             font-size: 62.5%;
         }
-        body{
-            font-family: 'Quicksand', sans-serif;
-            background-color: azure;
-            color: #008ebb;
-        }
         :root{
             --sm: 1.2rem;
             --md: 1.6rem;
-            --lg: 2rem            
+            --lg: 2rem;
+            --main-color:#454546;
+            --color-1:    #666666;
+            --color-2:#8c8c8c;
+            --background: #dcdcdc;
+            --complementary-color-1: #5dc1b9;
+            --complementary-color-2: #8ae0db;
+            --black: #000000;
+            --white: #FFFFFF;
+        } 
+        body{
+            font-family: 'Quicksand', sans-serif;
+            color: var(--main-color);
+            background-color: var(--color-2);
+            height: 150vh;
+            width: 80vw;
+            position: absolute;
+            left: 10%;
+        } 
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            background-color: var(--color-2);
+            width: 100%;
+            height: 16vh;
+        }
+        .title{
+            font-size: var(--lg);
+            color: var(--white);
+        }
+        .header-contianer p{
+            color: var(--white);
+            font-size: var(--sm);
+        }
+        
+        .logo-container{
+            position: relative;
+            left: 0 ;
+        }
+        .logo-container img{
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            display: none;
+        }
+        .main-container{
+            font-size: var(--md);
+           margin: 1.6rem 5rem 0 5rem  ;   
+           background-color: var(--background);
+            display: flex;
+            flex-flow: column ;
+            height: 100%;
+        }
+        .main-container h2{
+            color: var(--complementary-color-1);
+            font-size: var(--md);
+            margin: 12px 0 24px 4px;
+        }
+        .Product-Card{
+         margin-left: 20vw;
+         object-fit: cover;
+         
+        }
+        .Product-Card img{
+        height: 12rem;
+         width: 12rem;
+            border-radius: 8px;
+         
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            margin: 10%;
+        }
+        .cupones{
+            border-radius: 8px;
+            border-style: none;
+            font-family:'Quicksand', sans-serif ;
+        }
+        .container{
+            display: flex;
+            flex-flow: column ;
+        }
+        form input{
+            width: 30%;
+            height: 5vh;
+            margin: .4rem 2.4rem 3.2rem .8rem;
+            border-radius:  8px;
+            border-style: none;
+        }
+        .primary-button{
+            width: 30vw ;
+            height: 5vh;
+            margin: 16px 0 0 0;
+            border-radius: 50px;
+            border-style: none;
+            background-color: var(--complementary-color-1);
+            color: var(--white);
+        }
+        footer{
+            margin: 0;
+            background-color: var(--complementary-color-1);
+            height: 5vh;
+            width: 100vw;
+
         }
     </style>
 </head>
 <body>
     <header>
-        <h1> Porcentajes y Descuentos</h1>
-        <p> Este es el segundo taller del curso Practico de JavaScript</p>
+        <div class="logo-container" >
+            <img src="./imgs/png-transparent-logo-electronics-manufacturing-services-circuithub-electronics-manufacturing-services-others-blue-angle-electronics.png" alt="logo de la compa&ntilde;ia">
+      
+        </div>
+        <div class="header-contianer">
+            <h1 class="title"> Porcentajes y Descuentos</h1>
+            <p> Este es el segundo taller del curso Practico de JavaScript</p>
+        </div>
+        <div></div>
+        
     </header>
-    <section>
-        <h2> calcula el precio a pagar de tus productos con descuento</h2>
+    <section class="main-container">
+             <h2> Calcula el precio a pagar de tus productos con descuento</h2>
+             <div class="Product-Card">
+                <img src="https://images.pexels.com/photos/788946/pexels-photo-788946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Imagen del producto">
+            </div>
         <form action="">
-            <label for="inputPrice"> Escribe el precio de tu producto:</label>
-            <input type="number" id="inputPrice" >
-            <label for="inputDiscount" > Escribe el descuento de tu producto:</label>
-            <input type="number" id="inputDiscount">
-            <button type="button" onclick="PriceDiscount()" on> Calcular el precio con descuento</button>
+            <div class="container">
+                <label class="description" for="inputPrice"> Escribe el precio de tu producto:</label>
+                <input type="number" id="inputPrice" >
+            </div>
+            
+            <div class="container">
+                <label class="description" for="inputDiscount" >Seleccionar uno de los cupones de descuento por tipo de envio:</label>
+            <select name="cupones" id="envio" class="cupones">
+                <option class="option" value="15">Envio EXPRESS</option>
+                <option class="option" value="20">Envio normal</option>
+                <option class="option" value="25"> Retiro en local</option>
+            </select>
+            </div>
+            <div class="container">
+                <button type="button" class="primary-button" onclick="PriceDiscount()" on> Calcular el precio con descuento</button>
+
+            </div>
             <p id="ResultP"></p>
+            <p id="ResultP2"></p> 
+            <p id="ResultP3"></p> 
+
         </form>
     </section>
-
     <script src="./descuentos.js"></script>
 </body>
 </html>
